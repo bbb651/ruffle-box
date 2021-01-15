@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ruffle Box</title>
+	<script>
+		window.RufflePlayer = window.RufflePlayer || {};
+	
+		window.addEventListener("DOMContentLoaded", () => {
+			let ruffle = window.RufflePlayer.newest();
+			let player = ruffle.createPlayer();
+			let container = document.getElementById("player-container");
+			container.appendChild(player);
+		});
+	</script>
+	<script src="ruffle/ruffle.js"></script>
+</head>
+<body>
+	<div id="player-container"></div>
+</body>
+</html>
