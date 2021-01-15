@@ -30,6 +30,11 @@
 	width: 100%;
 }
 
+.game-delete {
+	width: 25px;
+	height: 25px;
+}
+
 #add-game-button {
 	width: 75px;
 	height: 75px;
