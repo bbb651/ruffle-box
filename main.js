@@ -39,12 +39,12 @@
 						gameDelete.classList.add("game-delete");
 						game.appendChild(gameDelete);
 
-						gameLabel.textContent = "Dad n' Me";
-						gameImage.src = "https://picon.ngfiles.com/254000/flash_254456_largest_crop.png?f1607980901";
+						gameLabel.textContent = file.name.split(".").slice(0, -1).join(".");
+						gameImage.src = "images/flash.svg";
 						game.data = reader.result;
 
 						game.addEventListener("click", event => {
-							if (event.target !== game.getElementsByClassName("game-delete")[0]) {
+							if (event.target !== gameDelete) {
 								if (game.data) {
 									player.load(game.data);
 								}
@@ -54,7 +54,7 @@
 							game.remove();
 						});
 
-						gamesContainer.insertBefore(game, gamesContainer.lastChild);
+						gamesContainer.insertBefore(game, document.getElementById("add-game-input"));
 					});
 
 					reader.readAsDataURL(file);
@@ -74,9 +74,13 @@
 			const fileList = event.dataTransfer.files;
 			addGames(fileList);
 		});
-		const addGameButton = document.getElementById("add-game-button");
-		addGameButton.addEventListener("change", event => {
-			addGames(addGameButton.files);
+
+		const addGameInput = document.getElementById("add-game-input");
+		addGameInput.addEventListener("change", event => {
+			addGames(addGameInput.files);
 		});
+
+		const addGameButton = document.getElementById("add-game-button");
+		addGameButton.onclick = () => addGameInput.click();
 	});
 })();

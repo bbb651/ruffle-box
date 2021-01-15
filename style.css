@@ -24,15 +24,41 @@
 .game-label {
 	text-align: center;
 	font-family: fantasy;
+	font-weight: bold;
 }
 
 .game-image {
-	width: 100%;
+	position: relative;
+	left: 40%;
+	width: 55%;
+	height: 55%;
 }
 
 .game-delete {
+	position: relative;
 	width: 25px;
 	height: 25px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border-radius: 25%;
+}
+
+.game-delete::before,
+.game-delete::after {
+	position: absolute;
+	content: "";
+	width: 100%;
+	height: 3px; /* cross thickness */
+	background-color: black;
+}
+
+.game-delete::before {
+	transform: rotate(45deg);
+}
+
+.game-delete::after {
+	transform: rotate(-45deg);
 }
 
 #add-game-button {
@@ -43,12 +69,17 @@
 		linear-gradient(#fff, #fff) top right,
 		linear-gradient(#fff, #fff) bottom left,
 		linear-gradient(#fff, #fff) bottom right;
-	background-size: calc(50% - 1px) calc(50% - 1px);
+	background-size: calc(50% - 1.5px) calc(50% - 1.5px);
 	background-repeat: no-repeat;
 	border: 10px solid #fff;
 	box-sizing: border-box;
 	border-radius: 50%;
 }
 
+#add-game-input {
+	display: none;
+}
+
 #player-container {
+	background-color: #1d1d1d;
 }
