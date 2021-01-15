@@ -1,0 +1,49 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#games-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 100px);
+	grid-template-rows: repeat(auto-fill, 100px);
+	align-items: center;
+	/* grid-auto-columns: auto; */
+	width: 100%;
+	height: auto;
+	background-color: #2a2a2a;
+}
+
+.game {
+	width: 100px;
+	height: 100px;
+	background-image: url(images/game.png);
+	background-size: cover;
+}
+
+.game-label {
+	text-align: center;
+	font-family: fantasy;
+}
+
+.game-image {
+	width: 100%;
+}
+
+#add-game-button {
+	width: 75px;
+	height: 75px;
+
+	background: linear-gradient(#fff, #fff) top left,
+		linear-gradient(#fff, #fff) top right,
+		linear-gradient(#fff, #fff) bottom left,
+		linear-gradient(#fff, #fff) bottom right;
+	background-size: calc(50% - 1px) calc(50% - 1px);
+	background-repeat: no-repeat;
+	border: 10px solid #fff;
+	box-sizing: border-box;
+	border-radius: 50%;
+}
+
+#player-container {
+}
